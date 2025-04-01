@@ -1,43 +1,38 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+// Tema 1 - Cadastro das cartas
+// Objetivo: No nível novato, você deve criar cartas representando cidades
+// utilizando scanf para entrada de dados e printf para exibir as informações.
+
+#define MAX_CIDADES 3
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    char nome[MAX_CIDADES][50];
+    int populacao[MAX_CIDADES];
+    float area[MAX_CIDADES], pib[MAX_CIDADES];
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    // Entrada de dados
+    for (int i = 0; i < MAX_CIDADES; i++) {
+        printf("Cadastro da cidade %d:\n", i + 1);
+        printf("Nome: ");
+        scanf(" %49[^"]", nome[i]);
+        printf("População: ");
+        scanf("%d", &populacao[i]);
+        printf("Área (km²): ");
+        scanf("%f", &area[i]);
+        printf("PIB per capita: ");
+        scanf("%f", &pib[i]);
+    }
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
-
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
-
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
-
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    // Exibição dos dados
+    printf("\nCartas cadastradas:\n");
+    for (int i = 0; i < MAX_CIDADES; i++) {
+        printf("\nCidade: %s\n", nome[i]);
+        printf("População: %d habitantes\n", populacao[i]);
+        printf("Área: %.2f km²\n", area[i]);
+        printf("PIB per capita: R$ %.2f\n", pib[i]);
+    }
 
     return 0;
 }
